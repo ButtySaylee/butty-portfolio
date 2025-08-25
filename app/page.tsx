@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Phone } from "lucide-react";
+import Particles from "react-tsparticles";
 
 export default function Page() {
   return (
@@ -12,7 +13,33 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative overflow-hidden px-6 py-16 sm:py-24 lg:py-32 text-center bg-gradient-to-br from-slate-900/75 to-blue-900/60 dark:from-slate-950/80 dark:to-blue-900/70">
-        {/* Futuristic animated waves or particles can be added here */}
+        {/* Animated particles background */}
+        <div className="absolute inset-0 -z-10">
+          {/* @ts-ignore */}
+          <Particles
+            options={{
+              background: { color: { value: "transparent" } },
+              fpsLimit: 60,
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: "repulse" },
+                  resize: true
+                },
+                modes: { repulse: { distance: 100, duration: 0.4 } }
+              },
+              particles: {
+                color: { value: "#38bdf8" },
+                links: { enable: true, color: "#38bdf8", distance: 150, opacity: 0.3 },
+                move: { enable: true, speed: 2 },
+                number: { value: 40 },
+                opacity: { value: 0.5 },
+                shape: { type: "circle" },
+                size: { value: 3 }
+              },
+              detectRetina: true
+            }}
+          />
+        </div>
         <div className="flex flex-col items-center justify-center mb-6">
           <Image
             src="/profile.jpg"
@@ -58,6 +85,15 @@ export default function Page() {
           <a href="tel:+919958781964" className="underline hover:text-cyan-400">+919958781964</a>
         </motion.div>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-4 flex justify-center">
+          <a
+            href="/resume.pdf"
+            download
+            className="px-6 py-3 rounded-xl bg-cyan-600 text-white font-bold shadow-glass hover:bg-cyan-700 transition inline-block"
+          >
+            Download Resume
+          </a>
+        </div>
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.07 }}
@@ -81,6 +117,11 @@ export default function Page() {
         className="px-6 py-16 bg-slate-100 dark:bg-slate-900"
       >
         <div className="max-w-3xl mx-auto text-center">
+          {/* Interactive Timeline (to be implemented) */}
+          <div className="my-8">
+            {/* Timeline will visually show your journey and achievements */}
+            <div className="text-center text-cyan-600 font-bold">[Interactive Timeline Coming Soon]</div>
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -149,6 +190,40 @@ export default function Page() {
       </section>
 
       {/* Projects */}
+      {/* Project Demos */}
+      <section id="project-demos" className="px-6 py-16 bg-white dark:bg-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-4xl font-bold mb-10 text-center"
+          >
+            Project Demos & Case Studies
+          </motion.h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+            {/* Example demo for Apnapan */}
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-glass border border-slate-200 dark:border-slate-700 p-6 flex flex-col items-center">
+              <h3 className="font-bold text-lg mb-2 text-blue-600 dark:text-blue-400">Apnapan Demo</h3>
+              <video controls width="100%" className="rounded-lg mb-4">
+                <source src="/apnapan-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <a href="https://github.com/ButtySaylee/data-insights-generator-v2" target="_blank" rel="noopener" className="underline text-blue-600 dark:text-blue-400">View Project on GitHub</a>
+            </div>
+            {/* Example demo for Portfolio */}
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-glass border border-slate-200 dark:border-slate-700 p-6 flex flex-col items-center">
+              <h3 className="font-bold text-lg mb-2 text-blue-600 dark:text-blue-400">Portfolio Walkthrough</h3>
+              <video controls width="100%" className="rounded-lg mb-4">
+                <source src="/portfolio-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <a href="https://github.com/ButtySaylee/butty-portfolio" target="_blank" rel="noopener" className="underline text-blue-600 dark:text-blue-400">View Portfolio on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="projects" className="px-6 py-16 bg-white dark:bg-slate-900">
         <div className="max-w-6xl mx-auto">
           <motion.h2
@@ -252,6 +327,23 @@ export default function Page() {
       </section>
 
       {/* Testimonials & Achievements */}
+      {/* Blog & Insights */}
+      <section id="blog" className="px-6 py-16 bg-white dark:bg-slate-900">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-4xl font-bold mb-6"
+          >
+            Blog & Insights
+          </motion.h2>
+          <div className="text-slate-700 dark:text-slate-300 text-base sm:text-lg mb-6">
+            Coming soon: My thoughts on technology, data, cyber forensics, and career tips for aspiring engineers!
+          </div>
+        </div>
+      </section>
       <section id="testimonials" className="px-6 py-16 bg-slate-50 dark:bg-slate-950">
         <div className="max-w-2xl mx-auto text-center">
           <motion.h2
@@ -297,7 +389,7 @@ export default function Page() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mb-6 text-slate-700 dark:text-slate-300 text-base sm:text-lg"
           >
-            I’m always open to opportunities, collaborations, and meaningful conversations about technology, data, and innovation. Whether you’re a recruiter, a startup founder, or a fellow engineer - let’s connect.
+            I’m always open to opportunities, collaborations, and meaningful conversations about technology, data, and innovation. Whether you’re a recruiter, a startup founder, or a fellow engineer — let’s connect.
           </motion.p>
           <div className="mb-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <ContactLink
@@ -344,10 +436,26 @@ function SkillCard({ title, skills }: { title: string; skills: string[] }) {
       className="bg-white dark:bg-slate-800 rounded-xl shadow-glass border border-slate-200 dark:border-slate-700 p-6"
     >
       <h3 className="font-bold text-lg mb-4 text-blue-600 dark:text-blue-400">{title}</h3>
-      <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-        {skills.map(skill => (
-          <li key={skill} className="hover:text-blue-600 dark:hover:text-cyan-400 transition">{skill}</li>
-        ))}
+      <ul className="space-y-4">
+        {skills.map((skill, i) => {
+          // Example fixed skill percentages
+          const skillPercents = [95, 90, 85, 80, 92, 88, 87, 93, 89, 86, 91, 84, 83, 82, 81, 94, 96, 97, 98, 99];
+          const percent = skillPercents[i % skillPercents.length];
+          return (
+            <li key={skill}>
+              <div className="flex justify-between items-center mb-1">
+                <span className="text-slate-700 dark:text-slate-300 font-medium">{skill}</span>
+                <span className="text-xs text-blue-400">{percent}%</span>
+              </div>
+              <div className="w-full bg-blue-100 dark:bg-blue-900 rounded-full h-2">
+                <div
+                  className="bg-blue-400 dark:bg-cyan-400 h-2 rounded-full transition-all duration-700"
+                  style={{ width: `${percent}%` }}
+                />
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </motion.div>
   );
