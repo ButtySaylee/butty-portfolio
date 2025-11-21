@@ -11,14 +11,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-<<<<<<< HEAD
     "/transcript/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/transcript/page.js"
     ],
-=======
->>>>>>> 1279868a4f7c9e21c94206eb2028d2a876442c7a
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

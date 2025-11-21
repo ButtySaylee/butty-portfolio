@@ -17,10 +17,7 @@ export default function Nav() {
       <div className="space-x-4">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-<<<<<<< HEAD
         <a href="/transcript">School Results</a>
-=======
->>>>>>> 1279868a4f7c9e21c94206eb2028d2a876442c7a
         <a href="#contact">Contact</a>
         <button
           onClick={toggleTheme}
