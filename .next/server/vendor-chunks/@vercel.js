@@ -35,9 +35,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
 
 
+<<<<<<< HEAD
 const e0 = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Hp\Desktop\butty-portfolio-main\node_modules\@vercel\analytics\dist\react\index.mjs#Analytics`);
 
 const e1 = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Hp\Desktop\butty-portfolio-main\node_modules\@vercel\analytics\dist\react\index.mjs#track`);
+=======
+const e0 = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Hp\Desktop\butty-portfolio-clean\node_modules\@vercel\analytics\dist\react\index.mjs#Analytics`);
+
+const e1 = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Hp\Desktop\butty-portfolio-clean\node_modules\@vercel\analytics\dist\react\index.mjs#track`);
+>>>>>>> 1279868a4f7c9e21c94206eb2028d2a876442c7a
 
 
 /***/ })

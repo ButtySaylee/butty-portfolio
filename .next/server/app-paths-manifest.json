@@ -1,5 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+<<<<<<< HEAD
   "/transcript/page": "app/transcript/page.js",
+=======
+>>>>>>> 1279868a4f7c9e21c94206eb2028d2a876442c7a
   "/page": "app/page.js"
 }

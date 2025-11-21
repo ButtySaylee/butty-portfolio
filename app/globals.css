@@ -5,6 +5,7 @@
 body {
   @apply antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100;
 }
+<<<<<<< HEAD
 
 /* Transcript print styles (moved from inline component to avoid hydration mismatch) */
 @page { size: A4; margin: 10mm; }
@@ -40,3 +41,5 @@ table.grades-table th { border-bottom: 1px solid #000; background-color: #fafafa
 .print-btn { position: fixed; top: 20px; right: 20px; background: #800000; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 @media (max-width: 768px) { .grades-container { grid-template-columns: 1fr; } .logo { position: relative; left: 0; margin: 0 auto 8px; } }
 @media print { .print-btn { display: none; } body.transcript-print { -webkit-print-color-adjust: exact; } }
+=======
+>>>>>>> 1279868a4f7c9e21c94206eb2028d2a876442c7a

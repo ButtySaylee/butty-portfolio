@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: C:\Users\Hp\Desktop\butty-portfolio-main\app\layout.tsx
+=======
+// File: C:\Users\Hp\Desktop\butty-portfolio-clean\app\layout.tsx
+>>>>>>> 1279868a4f7c9e21c94206eb2028d2a876442c7a
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
