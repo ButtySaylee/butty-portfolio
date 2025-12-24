@@ -73,7 +73,7 @@ export default function Transcript() {
                 <tr><td>AC102</td><td>Chemistry</td><td className="col-cr">4</td><td className="col-gr">C</td></tr>
                 <tr><td>ME104</td><td>Basic Mechanical Engineering</td><td className="col-cr">4</td><td className="col-gr">B</td></tr>
                 <tr><td>ME106</td><td>Workshop Practice</td><td className="col-cr">2</td><td className="col-gr">A+</td></tr>
-                <tr><td>FEC1</td><td>Sports - 1</td><td className="col-cr">2</td><td className="col-gr">A</td></tr>
+                <tr><td>FEC1</td><td>Sports - 1</td><td className="col-cr">2</td><td className="col-gr">O</td></tr>
                 <tr><td>MS199</td><td>Community Engagement(Mentoring Stdnts)</td><td className="col-cr">2</td><td className="col-gr">A+</td></tr>
               </tbody>
             </table>

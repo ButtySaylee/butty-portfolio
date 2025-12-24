@@ -1,4 +1,4 @@
-// File: C:\Users\Hp\Desktop\butty-portfolio\app\transcript\page.tsx
+// File: C:\Users\Hp\Desktop\Mis\butty-portfolio\app\transcript\page.tsx
 import * as entry from '../../../../app/transcript/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
