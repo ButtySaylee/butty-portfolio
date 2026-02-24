@@ -87,8 +87,7 @@ export default function Page() {
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <div className="mt-4 flex justify-center">
           <a
-            href="/resume.pdf"
-            download
+            href="/resume"
             className="px-6 py-3 rounded-xl bg-cyan-600 text-white font-bold shadow-glass hover:bg-cyan-700 transition inline-block"
           >
             Download Resume
@@ -138,18 +137,14 @@ export default function Page() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-slate-700 dark:text-slate-300 text-base sm:text-lg"
           >
-            I’m Butty Saylee, a passionate Software Engineering student at Delhi Technological University (DTU), originally from Liberia, with a mission to build technology that makes a global impact.
-            <br /><br />
-            My journey spans continents - from solving real-world challenges in Liberia to innovating in India. I specialize in full-stack development, data analysis, and cyber forensics, blending technical precision with creativity and problem-solving.
-            <br /><br />
-            What sets me apart is versatility: I’ve built tools that empower 100+ users, analyzed data that drives decisions, and led international student initiatives that foster collaboration. Whether it’s writing clean code, designing secure systems, or visualizing data insights, I thrive on turning ideas into solutions that matter.
+            Final Year Software Engineering student with a minor in Cyber Forensics and Cyber Law. Hands-on experience in Python-based full-stack development, data analysis, virtual assistance, and technical support. Proven in building scalable tools for 100+ users while ensuring data privacy compliance and collaborating on cross-functional teams to deliver impactful solutions. Eager to leverage analytical thinking and problem-solving in innovative environments across tech, research, and administrative roles.
           </motion.p>
         </div>
       </section>
 
-      {/* Skills */}
-      <section id="skills" className="px-6 py-16 bg-slate-50 dark:bg-slate-950">
-        <div className="max-w-5xl mx-auto">
+      {/* Experience & Leadership */}
+      <section id="experience" className="px-6 py-16 bg-slate-50 dark:bg-slate-950">
+        <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,73 +152,79 @@ export default function Page() {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-4xl font-bold mb-8 text-center"
           >
-            Skills & Interests
+            Experience & Leadership
           </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Programming */}
-            <SkillCard title="Programming" skills={["Python", "C", "C++", "JavaScript"]} />
-            {/* Web Development */}
-            <SkillCard title="Web Development" skills={["HTML", "CSS", "Git", "GitHub"]} />
-            {/* Technical */}
-            <SkillCard title="Technical" skills={[
-              "Software Engineering Principles",
-              "DSA",
-              "Data Analysis",
-              "Visualization",
-              "DBMS",
-              "Cyber Forensics"
-            ]} />
-            {/* Tools */}
-            <SkillCard title="Tools" skills={[
-              "MongoDB", "Google Colab", "VS Code", "Jupyter", "Google Workspace"
-            ]} />
-            {/* Soft Skills */}
-            <SkillCard title="Soft Skills" skills={[
-              "Analytical Thinking", "Collaboration", "Time Management", "Problem-Solving"
-            ]} />
-            {/* Interests */}
-            <SkillCard title="Interests" skills={[
-              "AI Ethics", "Social Impact Projects", "Open-Source Contributions"
-            ]} />
-          </div>
+          <ul className="space-y-5">
+            <ExperienceItem
+              role="EXPERIENCE LEAD School — Quality Assurance Freelancer"
+              period="Jan 2026 – Present"
+              description="Performing quality assurance reviews of educational books to ensure accuracy, grammar, and formatting consistency. Identifying and correcting errors in content, diagrams, and references to improve clarity and compliance with standards. Delivering error-free learning materials across multiple grade levels, enhancing reliability and student outcomes."
+            />
+            <ExperienceItem
+              role="Apnapan Fellow - Data/Software Engineering Intern"
+              period="May 2025 – Aug 2025"
+              description="Engineered a data insights platform using Python, Streamlit, Pandas and Plotly to analyze 100+ student surveys. Integrated Google Sheets API and authentication to enable secure real-time data access. Improved reporting efficiency and stakeholder adoption by approximately 40%."
+            />
+            <ExperienceItem
+              role="PR Strategist Intern - Swanirbhar"
+              period="May 2025 – Aug 2025"
+              description="Conducted data collection from 50+ surveys and interviews. Analyzed insights from survey and interview responses to support incubation and research strategy reports."
+            />
+            <ExperienceItem
+              role="Remote Virtual Assistant - Hypely Pty Ltd"
+              period="Apr 2024 – May 2025"
+              description="Managed and verified 200+ business listings to improve marketplace accuracy. Conducted web research and assisted with email marketing campaigns. Increased outreach engagement by approximately 15%."
+            />
+            <ExperienceItem
+              role="Technical Support Assistant - Libtelco"
+              period="Oct 2019 – Jul 2021"
+              description="Diagnosed and resolved software/hardware issues for internal users, minimizing downtime by 25% through proactive maintenance."
+            />
+            <ExperienceItem
+              role="Technical Coordinator - DTU International Student Society"
+              period="Nov 2022 - Jan 2024"
+              description="Led planning and execution of 5+ technical events with 150+ international student participants. Strengthened cross-cultural collaboration among 150+ international students, improving event participation and peer networking."
+            />
+          </ul>
         </div>
       </section>
 
-      {/* Projects */}
-      {/* Project Demos */}
-      <section id="project-demos" className="px-6 py-16 bg-white dark:bg-slate-900">
-        <div className="max-w-6xl mx-auto">
+      {/* Education & Certifications */}
+      <section id="education" className="px-6 py-16 bg-white dark:bg-slate-900">
+        <div className="max-w-3xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-4xl font-bold mb-10 text-center"
+            className="text-2xl sm:text-4xl font-bold mb-6"
           >
-            Project Demos & Case Studies
+            Education & Certifications
           </motion.h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
-            {/* Example demo for Apnapan */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-glass border border-slate-200 dark:border-slate-700 p-6 flex flex-col items-center">
-              <h3 className="font-bold text-lg mb-2 text-blue-600 dark:text-blue-400">Apnapan Demo</h3>
-              <video controls width="100%" className="rounded-lg mb-4">
-                <source src="/apnapan-demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <a href="https://github.com/ButtySaylee/data-insights-generator-v2" target="_blank" rel="noopener" className="underline text-blue-600 dark:text-blue-400">View Project on GitHub</a>
-            </div>
-            {/* Example demo for Portfolio */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-glass border border-slate-200 dark:border-slate-700 p-6 flex flex-col items-center">
-              <h3 className="font-bold text-lg mb-2 text-blue-600 dark:text-blue-400">Portfolio Walkthrough</h3>
-              <video controls width="100%" className="rounded-lg mb-4">
-                <source src="/portfolio-demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <a href="https://github.com/ButtySaylee/butty-portfolio" target="_blank" rel="noopener" className="underline text-blue-600 dark:text-blue-400">View Portfolio on GitHub</a>
-            </div>
-          </div>
+          <ul className="space-y-4 text-lg text-slate-700 dark:text-slate-300">
+            <li>
+              <strong>B.Tech Software Engineering, Minor in Cyber Forensics & Cyber Law</strong> — DTU, India (Expected Jul 2026)
+            </li>
+            <li>
+              <a href="https://www.coursera.org/account/accomplishments/records/ZHL0CFO2U1Q6" target="_blank" rel="noopener" className="underline hover:text-blue-600">Foundations of Cybersecurity — Google (Coursera), 2025</a>
+            </li>
+            <li>
+              <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL25CS69S105370453804451484" target="_blank" rel="noopener" className="underline hover:text-blue-600">Joy of Computing with Python — IIT Madras (NPTEL), 2025</a>
+            </li>
+            <li>
+              <a href="https://coursera.org/share/1c0d45c64bdc78d2266e0cf60636e1c2" target="_blank" rel="noopener" className="underline hover:text-blue-600">IBM Introduction to Software Engineering (Coursera), 2024</a>
+            </li>
+            <li>
+              <a href="https://coursera.org/share/cf9e90d5a4b709c8aa07e4747fa5261f" target="_blank" rel="noopener" className="underline hover:text-blue-600">Duke Programming Fundamentals (Coursera), 2024</a>
+            </li>
+            <li>
+              <a href="https://www.virtualbadge.io/certificate-validator?credential=cer-bb6d7034-0fea-483f-8b58-0c104aaf" target="_blank" rel="noopener" className="underline hover:text-blue-600">ALX Africa Virtual Assistant Training, 2024</a>
+            </li>
+          </ul>
         </div>
       </section>
+
+      {/* Projects */}
       <section id="projects" className="px-6 py-16 bg-white dark:bg-slate-900">
         <div className="max-w-6xl mx-auto">
           <motion.h2
@@ -252,9 +253,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Experience & Leadership */}
-      <section id="experience" className="px-6 py-16 bg-slate-50 dark:bg-slate-950">
-        <div className="max-w-4xl mx-auto">
+      {/* Skills */}
+      <section id="skills" className="px-6 py-16 bg-slate-50 dark:bg-slate-950">
+        <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -262,67 +263,34 @@ export default function Page() {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-4xl font-bold mb-8 text-center"
           >
-            Experience & Leadership
+            Skills & Interests
           </motion.h2>
-          <ul className="space-y-5">
-            <ExperienceItem
-              role="Apnapan Fellow - Data/Software Engineering Intern"
-              period="2025 – Present"
-              description="Developed and maintained the Apnapan Data Insights Platform, a secure full-stack solution for analyzing student surveys on belonging and well-being. Built dashboards, authentication, and automated PDF reports, improving efficiency by 40%."
-            />
-            <ExperienceItem
-              role="PR Strategist Intern - Swanirbhar"
-              period="2025"
-              description="Synthesized 50+ surveys & interviews into actionable strategy reports. Contributed to 3 community impact reports."
-            />
-            <ExperienceItem
-              role="Remote Virtual Assistant - Hypely Pty Ltd"
-              period="2024–25"
-              description="Managed & optimized 200+ business listings, created Canva content viewed by 500+ prospects, boosted client engagement by 15%."
-            />
-            <ExperienceItem
-              role="Technical Coordinator - DTU International Student Society"
-              period="2022–24"
-              description="Led international student initiatives, fostered collaboration, and supported technical operations for the society."
-            />
-            <ExperienceItem
-              role="Technical Support (Libtelco) & Desktop Publishing (Divine Grace Tech Solutions, Liberia)"
-              period="Early Career"
-              description="Provided technical support and desktop publishing services, contributing to business operations and client satisfaction."
-            />
-          </ul>
-        </div>
-      </section>
-
-      {/* Education & Certifications */}
-      <section id="education" className="px-6 py-16 bg-white dark:bg-slate-900">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-4xl font-bold mb-6"
-          >
-            Education & Certifications
-          </motion.h2>
-          <ul className="space-y-4 text-lg text-slate-700 dark:text-slate-300">
-            <li>
-              <strong>B.Tech Software Engineering, Minor in Cyber Forensics & Cyber Law</strong> — DTU, India (2022–26)
-            </li>
-            <li>
-              <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL25CS69S105370453804451484" target="_blank" rel="noopener" className="underline hover:text-blue-600">Elite Certification — Joy of Computing with Python, IIT Madras (NPTEL)</a>
-            </li>
-            <li>
-              <a href="https://coursera.org/share/1c0d45c64bdc78d2266e0cf60636e1c2" target="_blank" rel="noopener" className="underline hover:text-blue-600">IBM Introduction to Software Engineering (Coursera)</a>
-            </li>
-            <li>
-              <a href="https://coursera.org/share/cf9e90d5a4b709c8aa07e4747fa5261f" target="_blank" rel="noopener" className="underline hover:text-blue-600">Duke Programming Fundamentals (Coursera)</a>
-            </li>
-            <li>
-              <a href="https://www.virtualbadge.io/certificate-validator?credential=cer-bb6d7034-0fea-483f-8b58-0c104aaf" target="_blank" rel="noopener" className="underline hover:text-blue-600">ALX Africa Virtual Assistant Training</a>
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Programming */}
+            <SkillCard title="Programming" skills={["Python", "JavaScript", "C", "C++"]} />
+            {/* Web, Data & Databases */}
+            <SkillCard title="Web, Data & Databases" skills={["React", "Next.js", "Streamlit", "Pandas", "Plotly", "MongoDB", "MySQL"]} />
+            {/* Cybersecurity & Cloud */}
+            <SkillCard title="Cybersecurity & Cloud" skills={[
+              "Security Principles",
+              "Risk Management",
+              "Authentication & Access Control",
+              "Data Privacy",
+              "Cloud Computing"
+            ]} />
+            {/* Tools & Platforms */}
+            <SkillCard title="Tools & Platforms" skills={[
+              "Git", "GitHub", "VS Code", "Jupyter Notebook", "Google Workspace", "Google Sheets API", "GitHub Copilot"
+            ]} />
+            {/* Analytical & Professional Skills */}
+            <SkillCard title="Analytical & Professional" skills={[
+              "Data Analysis", "Data Visualization", "Problem-Solving", "Technical Documentation", "Cross-functional Collaboration"
+            ]} />
+            {/* Interests */}
+            <SkillCard title="Interests" skills={[
+              "AI Ethics", "Social Impact Projects", "Open-Source Contributions"
+            ]} />
+          </div>
         </div>
       </section>
 
