@@ -5,204 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Transcript - Butty Saylee</title>
     <style>
-        @page {
-            size: A4;
-            margin: 10mm;
-        }
-        
-        body {
-            font-family: "Times New Roman", Times, serif;
-            margin: 0;
-            padding: 0;
-            background: #fff;
-            color: #000;
-            line-height: 1.3;
-        }
-
-        .container {
-            width: 190mm; /* A4 printable width approx */
-            margin: 0 auto;
-        }
-
-        /* Header Section */
-        .header {
-            text-align: center;
-            margin-bottom: 15px;
-            position: relative;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
-        }
-
-        .logo {
-            position: absolute;
-            top: 0;
-            left: -6px;
-            width: 70px;
-            height: auto;
-        }
-
-        .uni-name {
-            font-size: 22pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0;
-            letter-spacing: 1px;
-            color: #800000; /* Dark Red similar to DTU logo color */
-        }
-
-        .uni-sub {
-            font-size: 11pt;
-            margin: 2px 0;
-            font-weight: bold;
-        }
-
-        .uni-addr {
-            font-size: 10pt;
-            margin: 0;
-        }
-
-        .doc-title {
-            font-size: 14pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 15px;
-            text-decoration: underline;
-        }
-
-        /* Student Details */
-        .student-info {
-            width: 100%;
-            margin-bottom: 15px;
-            border: 1px solid #000;
-            padding: 5px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 4px;
-        }
-
-        .info-item {
-            flex: 1;
-            font-size: 11pt;
-        }
-
-        .info-label {
-            font-weight: bold;
-        }
-
-        /* Grades Grid */
-        .grades-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 15px;
-            row-gap: 10px;
-        }
-
-        .semester-block {
-            border: 1px solid #000;
-            padding: 0;
-        }
-
-        .sem-header {
-            background-color: #f0f0f0;
-            font-weight: bold;
-            padding: 4px;
-            text-align: center;
-            border-bottom: 1px solid #000;
-            font-size: 10pt;
-        }
-
-        table.grades-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 9pt;
-        }
-
-        table.grades-table th, table.grades-table td {
-            border: 1px solid #ccc; /* Softer internal lines */
-            padding: 2px 4px;
-            text-align: left;
-        }
-
-        table.grades-table th {
-            border-bottom: 1px solid #000;
-            background-color: #fafafa;
-            text-align: center;
-        }
-
+        @page { size: A4; margin: 10mm; }
+        body { font-family: "Times New Roman", Times, serif; margin: 0; padding: 0; background: #fff; color: #000; line-height: 1.3; }
+        .container { width: 190mm; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 15px; position: relative; border-bottom: 2px solid #000; padding-bottom: 10px; }
+        .logo { position: absolute; top: 0; left: -6px; width: 70px; height: auto; }
+        .uni-name { font-size: 22pt; font-weight: bold; text-transform: uppercase; margin: 0; letter-spacing: 1px; color: #800000; }
+        .uni-sub { font-size: 11pt; margin: 2px 0; font-weight: bold; }
+        .uni-addr { font-size: 10pt; margin: 0; }
+        .doc-title { font-size: 14pt; font-weight: bold; text-transform: uppercase; margin-top: 15px; text-decoration: underline; }
+        .student-info { width: 100%; margin-bottom: 15px; border: 1px solid #000; padding: 5px; }
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+        .info-item { flex: 1; font-size: 11pt; }
+        .info-label { font-weight: bold; }
+        .grades-container { display: grid; grid-template-columns: 1fr 1fr; column-gap: 15px; row-gap: 10px; }
+        .semester-block { border: 1px solid #000; padding: 0; }
+        .sem-header { background-color: #f0f0f0; font-weight: bold; padding: 4px; text-align: center; border-bottom: 1px solid #000; font-size: 10pt; }
+        table.grades-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+        table.grades-table th, table.grades-table td { border: 1px solid #ccc; padding: 2px 4px; text-align: left; }
+        table.grades-table th { border-bottom: 1px solid #000; background-color: #fafafa; text-align: center; }
         .col-code { width: 15%; }
         .col-subject { width: 65%; }
         .col-cr { width: 10%; text-align: center; }
         .col-gr { width: 10%; text-align: center; }
-
-        .sem-summary {
-            border-top: 1px solid #000;
-            padding: 4px;
-            font-weight: bold;
-            font-size: 10pt;
-            display: flex;
-            justify-content: space-between;
-            background: #f9f9f9;
-        }
-
-        /* Footer / Overall Summary */
-        .footer-section {
-            margin-top: 15px;
-            border-top: 2px solid #000;
-            padding-top: 10px;
-        }
-
-        .performance-summary {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        .performance-summary td, .performance-summary th {
-            border: 1px solid #000;
-            padding: 5px;
-            text-align: center;
-            font-size: 11pt;
-        }
-
-        .signatures {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-top: 20px;
-            padding: 0 20px;
-        }
-
-        .sig-block {
-            text-align: center;
-        }
-
-        .sig-line {
-            width: 200px;
-            border-top: 1px solid #000;
-            margin-bottom: 5px;
-        }
-
-        .print-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #800000;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        @media print {
-            .print-btn { display: none; }
-            body { -webkit-print-color-adjust: exact; }
-        }
+        .sem-summary { border-top: 1px solid #000; padding: 4px; font-weight: bold; font-size: 10pt; display: flex; justify-content: space-between; background: #f9f9f9; }
+        .footer-section { margin-top: 15px; border-top: 2px solid #000; padding-top: 10px; }
+        .performance-summary { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .performance-summary td, .performance-summary th { border: 1px solid #000; padding: 5px; text-align: center; font-size: 11pt; }
+        .print-btn { position: fixed; top: 20px; right: 20px; background: #800000; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; }
+        @media print { .print-btn { display: none; } body { -webkit-print-color-adjust: exact; } }
     </style>
 </head>
 <body>
@@ -210,17 +41,14 @@
     <button class="print-btn" onclick="window.print()">Print Transcript</button>
 
     <div class="container">
-        <!-- Header -->
         <div class="header">
-            <!-- Ensure image is in the same folder -->
             <img src="DTU,_Delhi_official_logo.png" alt="DTU Logo" class="logo" onerror="this.style.display='none'">
             <h1 class="uni-name">Delhi Technological University</h1>
             <p class="uni-sub">(Formerly Delhi College of Engineering)</p>
             <p class="uni-addr">Shahbad Daulatpur, Main Bawana Road, Delhi-110042</p>
-            <div class="doc-title">Consolidated Statement of Grades (Semester I -- Semester VI)</div>
+            <div class="doc-title">Consolidated Statement of Grades (Semester I -- Semester VII)</div>
         </div>
 
-        <!-- Student Details -->
         <div class="student-info">
             <div class="info-row">
                 <div class="info-item"><span class="info-label">Name:</span> BUTTY SAYLEE</div>
@@ -230,168 +58,136 @@
             <div class="info-row">
                 <div class="info-item"><span class="info-label">Program:</span> Bachelor of Technology</div>
                 <div class="info-item"><span class="info-label">Branch:</span> Software Engineering</div>
-                <div class="info-item"><span class="info-label">Generated:</span> November 21, 2025</div>
+                <div class="info-item"><span class="info-label">Generated:</span> February 24, 2026</div>
             </div>
         </div>
 
-        <!-- Grades Grid -->
         <div class="grades-container">
-            
-            <!-- Semester 1 -->
             <div class="semester-block">
                 <div class="sem-header">SEMESTER I (Odd)</div>
                 <table class="grades-table">
                     <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
                     <tbody>
-                        <tr><td>MA101</td><td>Mathematics - I</td><td class="col-cr">4</td><td class="col-gr">P</td></tr>
-                        <tr><td>AP101</td><td>Physics - I</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>EE101</td><td>Basic Electrical Engineering</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>CO101</td><td>Programming Fundamentals</td><td class="col-cr">4</td><td class="col-gr">A</td></tr>
-                        <tr><td>ME105</td><td>Engineering Graphics</td><td class="col-cr">2</td><td class="col-gr">B+</td></tr>
-                        <tr><td>FEC3</td><td>Physical Education & Sports</td><td class="col-cr">2</td><td class="col-gr">O</td></tr>
+                        <tr><td>MA101</td><td>Mathematics - I</td><td>4</td><td>P</td></tr>
+                        <tr><td>AP101</td><td>Physics - I</td><td>4</td><td>B</td></tr>
+                        <tr><td>EE101</td><td>Basic Electrical Engineering</td><td>4</td><td>B</td></tr>
+                        <tr><td>CO101</td><td>Programming Fundamentals</td><td>4</td><td>A</td></tr>
+                        <tr><td>ME105</td><td>Engineering Graphics</td><td>2</td><td>B+</td></tr>
+                        <tr><td>FEC3</td><td>Physical Education & Sports</td><td>2</td><td>O</td></tr>
                     </tbody>
                 </table>
-                <div class="sem-summary">
-                    <span>SGPA: 6.50</span>
-                    <span>TC: 20</span>
-                </div>
+                <div class="sem-summary"><span>SGPA: 6.50</span><span>TC: 20</span></div>
             </div>
 
-            <!-- Semester 2 -->
             <div class="semester-block">
                 <div class="sem-header">SEMESTER II (Even)</div>
                 <table class="grades-table">
                     <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
                     <tbody>
-                        <tr><td>MA102</td><td>Mathematics - II</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>AP102</td><td>Physics - II</td><td class="col-cr">4</td><td class="col-gr">B+</td></tr>
-                        <tr><td>AC102</td><td>Chemistry</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>ME104</td><td>Basic Mechanical Engineering</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>ME106</td><td>Workshop Practice</td><td class="col-cr">2</td><td class="col-gr">A+</td></tr>
-                        <tr><td>FEC1</td><td>Sports - 1</td><td class="col-cr">2</td><td class="col-gr">O</td></tr> <!-- Grade inferred -->
-                        <tr><td>MS199</td><td>Community Engagement(Mentoring Stdnts)</td><td class="col-cr">2</td><td class="col-gr">A+</td></tr>
+                        <tr><td>MA102</td><td>Mathematics - II</td><td>4</td><td>B</td></tr>
+                        <tr><td>AP102</td><td>Physics - II</td><td>4</td><td>B+</td></tr>
+                        <tr><td>AC102</td><td>Chemistry</td><td>4</td><td>C</td></tr>
+                        <tr><td>ME104</td><td>Basic Mechanical Engineering</td><td>4</td><td>B</td></tr>
+                        <tr><td>ME106</td><td>Workshop Practice</td><td>2</td><td>A+</td></tr>
+                        <tr><td>FEC1</td><td>Sports - I</td><td>2</td><td>O</td></tr>
+                        <tr><td>MS199</td><td>Community Engagement</td><td>2</td><td>A+</td></tr>
                     </tbody>
                 </table>
-                <div class="sem-summary">
-                    <span>SGPA: 6.91</span>
-                    <span>TC: 22</span>
-                </div>
+                <div class="sem-summary"><span>SGPA: 6.91</span><span>TC: 22</span></div>
             </div>
 
-            <!-- Semester 3 -->
             <div class="semester-block">
                 <div class="sem-header">SEMESTER III (Odd)</div>
                 <table class="grades-table">
                     <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
                     <tbody>
-                        <tr><td>EC271a</td><td>Digital Electronics</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>FEC16</td><td>Sport-II</td><td class="col-cr">2</td><td class="col-gr">O</td></tr>
-                        <tr><td>SE201</td><td>Data Structures</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>SE203</td><td>Object-Oriented Programming</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>SE205a</td><td>Operating Systems</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>SE207a</td><td>Engineering Analysis & Design</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
+                        <tr><td>EC271a</td><td>Digital Electronics</td><td>4</td><td>C</td></tr>
+                        <tr><td>FEC16</td><td>Sports - II</td><td>2</td><td>O</td></tr>
+                        <tr><td>SE201</td><td>Data Structures</td><td>4</td><td>C</td></tr>
+                        <tr><td>SE203a</td><td>Object-Oriented Programming</td><td>4</td><td>B</td></tr>
+                        <tr><td>SE205a</td><td>Operating Systems</td><td>4</td><td>B</td></tr>
+                        <tr><td>SE207a</td><td>Engineering Analysis & Design</td><td>4</td><td>B</td></tr>
                     </tbody>
                 </table>
-                <div class="sem-summary">
-                    <span>SGPA: 6.00</span>
-                    <span>TC: 22</span>
-                </div>
+                <div class="sem-summary"><span>SGPA: 6.00</span><span>TC: 22</span></div>
             </div>
 
-            <!-- Semester 4 -->
             <div class="semester-block">
                 <div class="sem-header">SEMESTER IV (Even)</div>
                 <table class="grades-table">
                     <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
                     <tbody>
-                        <tr><td>EC272a</td><td>Computer System Architecture</td><td class="col-cr">4</td><td class="col-gr">P</td></tr>
-                        <tr><td>FEC7</td><td>Intro. to Environmental Science</td><td class="col-cr">2</td><td class="col-gr">C</td></tr>
-                        <tr><td>SE202a</td><td>Object Oriented Software Eng.</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>SE204a</td><td>Machine Learning</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>SE206</td><td>Database Management Systems</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>SE208a</td><td>Algorithm Design & Analysis</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
+                        <tr><td>EC272a</td><td>Computer System Architecture</td><td>4</td><td>P</td></tr>
+                        <tr><td>FEC7</td><td>Environmental Science</td><td>2</td><td>C</td></tr>
+                        <tr><td>SE202a</td><td>Object-Oriented Software Eng.</td><td>4</td><td>B</td></tr>
+                        <tr><td>SE204a</td><td>Machine Learning</td><td>4</td><td>C</td></tr>
+                        <tr><td>SE206</td><td>Database Management Systems</td><td>4</td><td>B</td></tr>
+                        <tr><td>SE208a</td><td>Algorithm Design & Analysis</td><td>4</td><td>B</td></tr>
                     </tbody>
                 </table>
-                <div class="sem-summary">
-                    <span>SGPA: 5.36</span>
-                    <span>TC: 22</span>
-                </div>
+                <div class="sem-summary"><span>SGPA: 5.36</span><span>TC: 22</span></div>
             </div>
 
-            <!-- Semester 5 -->
             <div class="semester-block">
                 <div class="sem-header">SEMESTER V (Odd)</div>
                 <table class="grades-table">
                     <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
                     <tbody>
-                        <tr><td>HU301a</td><td>Engineering Economics</td><td class="col-cr">3</td><td class="col-gr">B</td></tr>
-                        <tr><td>MOOC305</td><td>Ethical Hacking</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>SE301a</td><td>Software Testing</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>SE303a</td><td>Software Quality Metrics</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>SE305</td><td>Software Req. Engineering</td><td class="col-cr">4</td><td class="col-gr">B+</td></tr>
-                        <tr><td>SE323</td><td>Theory of Computation</td><td class="col-cr">4</td><td class="col-gr">P</td></tr>
-                        <tr><td>SE325</td><td>Web Technology</td><td class="col-cr">4</td><td class="col-gr">B+</td></tr>
+                        <tr><td>HU301a</td><td>Engineering Economics</td><td>3</td><td>B</td></tr>
+                        <tr><td>MOOC305</td><td>Ethical Hacking</td><td>4</td><td>C</td></tr>
+                        <tr><td>SE301a</td><td>Software Testing</td><td>4</td><td>C</td></tr>
+                        <tr><td>SE303a</td><td>Software Quality Metrics</td><td>4</td><td>B</td></tr>
+                        <tr><td>SE305</td><td>Software Requirements Engineering</td><td>4</td><td>B+</td></tr>
+                        <tr><td>SE323</td><td>Theory of Computation</td><td>4</td><td>P</td></tr>
+                        <tr><td>SE325</td><td>Web Technology</td><td>4</td><td>B+</td></tr>
                     </tbody>
                 </table>
-                <div class="sem-summary">
-                    <span>SGPA: 5.70</span>
-                    <span>TC: 27</span>
-                </div>
+                <div class="sem-summary"><span>SGPA: 5.70</span><span>TC: 27</span></div>
             </div>
 
-            <!-- Semester 6 -->
             <div class="semester-block">
                 <div class="sem-header">SEMESTER VI (Even)</div>
                 <table class="grades-table">
                     <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
                     <tbody>
-                        <tr><td>IT316</td><td>Cyber Forensic</td><td class="col-cr">4</td><td class="col-gr">B+</td></tr>
-                        <tr><td>MG302</td><td>Fundamentals of Management</td><td class="col-cr">3</td><td class="col-gr">B</td></tr>
-                        <tr><td>MOOC306</td><td>Joy of Computing Using Python</td><td class="col-cr">4</td><td class="col-gr">B+</td></tr>
-                        <tr><td>SE302a</td><td>Empirical Software Engineering</td><td class="col-cr">4</td><td class="col-gr">B</td></tr>
-                        <tr><td>SE304a</td><td>Computer Networks</td><td class="col-cr">4</td><td class="col-gr">C</td></tr>
-                        <tr><td>SE306</td><td>Compiler Design</td><td class="col-cr">4</td><td class="col-gr">B+</td></tr>
-                        <tr><td>SE308</td><td>Software Reliability</td><td class="col-cr">4</td><td class="col-gr">P</td></tr>
-                        <tr><td>SE316</td><td>Natural Language Processing</td><td class="col-cr">4</td><td class="col-gr">P</td></tr>
+                        <tr><td>IT316</td><td>Cyber Forensic</td><td>4</td><td>B+</td></tr>
+                        <tr><td>MG302</td><td>Fundamentals of Management</td><td>3</td><td>B</td></tr>
+                        <tr><td>MOOC306</td><td>Joy of Computing using Python</td><td>4</td><td>B+</td></tr>
+                        <tr><td>SE302a</td><td>Empirical Software Engineering</td><td>4</td><td>B</td></tr>
+                        <tr><td>SE304a</td><td>Computer Networks</td><td>4</td><td>C</td></tr>
+                        <tr><td>SE306</td><td>Compiler Design</td><td>4</td><td>B+</td></tr>
+                        <tr><td>SE308</td><td>Software Reliability</td><td>4</td><td>P</td></tr>
+                        <tr><td>SE316</td><td>Natural Language Processing</td><td>4</td><td>P</td></tr>
                     </tbody>
                 </table>
-                <div class="sem-summary">
-                    <span>SGPA: 5.74</span>
-                    <span>TC: 31</span>
-                </div>
+                <div class="sem-summary"><span>SGPA: 5.74</span><span>TC: 31</span></div>
+            </div>
+
+            <div class="semester-block">
+                <div class="sem-header">SEMESTER VII (Odd)</div>
+                <table class="grades-table">
+                    <thead><tr><th class="col-code">Code</th><th class="col-subject">Subject Title</th><th class="col-cr">Cr</th><th class="col-gr">Gr</th></tr></thead>
+                    <tbody>
+                        <tr><td>IT321</td><td>Malware Analysis</td><td>4</td><td>B+</td></tr>
+                        <tr><td>IT407</td><td>Information & Network Security</td><td>4</td><td>A</td></tr>
+                        <tr><td>IT429</td><td>Cyber Laws</td><td>4</td><td>B+</td></tr>
+                        <tr><td>SE401</td><td>B.Tech Project-1</td><td>4</td><td>A</td></tr>
+                        <tr><td>SE403</td><td>Training Seminar</td><td>2</td><td>A+</td></tr>
+                    </tbody>
+                </table>
+                <div class="sem-summary"><span>SGPA: 7.67</span><span>TC: 18</span></div>
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="footer-section">
             <table class="performance-summary">
-                <thead>
-                    <tr>
-                        <th colspan="2" style="background:#f0f0f0;">PERFORMANCE SUMMARY</th>
-                    </tr>
-                </thead>
+                <thead><tr><th colspan="2" style="background:#f0f0f0;">PERFORMANCE SUMMARY</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td><strong>Total Credits Earned</strong></td>
-                        <td><strong>144</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cumulative SGPA (CGPA)</strong></td>
-                        <td><strong>6.03</strong></td>
-                    </tr>
-                  
+                    <tr><td><strong>Total Credits Earned</strong></td><td><strong>162 / 162</strong></td></tr>
+                    <tr><td><strong>Cumulative CGPA (Up to Sem VII)</strong></td><td><strong>6.2</strong></td></tr>
                 </tbody>
             </table>
-
-            <div class="signatures">
-
-                </div>
-                    <div><strong>Note:<em> Results for Semester VII and Semester VIII are still in progress...</em></strong></div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; font-size: 3pc; margin-top: 50px; color: #555;">
-            </div>
+            <div><strong>Note:<em> Results for Semester VIII are still in progress...</em></strong></div>
         </div>
     </div>
 </body>
