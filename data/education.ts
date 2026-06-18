@@ -21,7 +21,7 @@ export const education: Education = {
   minor: "Cyber Forensics & Cyber Law",
   institution: "Delhi Technological University (DTU)",
   location: "Delhi, India",
-  period: "2021 - 2026",
+  period: "2022 - 2026",
   expectedGraduation: "Jul 2026"
 };
 
@@ -65,5 +65,29 @@ export const certifications: Certification[] = [
     platform: "ALX",
     year: 2024,
     url: "https://www.virtualbadge.io/certificate-validator?credential=cer-bb6d7034-0fea-483f-8b58-0c104aaf"
+  },
+  {
+    id: "google-tech-support",
+    title: "Technical Support Fundamentals",
+    provider: "Google",
+    platform: "Coursera",
+    year: 2026,
+    url: "https://www.coursera.org/account/accomplishments/"
+  },
+  {
+    id: "web-design-odl",
+    title: "Web Design",
+    provider: "Orange Liberia Digital Center",
+    platform: "OLDC",
+    year: 2022,
+    url: ""
+  },
+  {
+    id: "cso-ymca",
+    title: "Computer Software Operator",
+    provider: "YMCA of Liberia",
+    platform: "YMCA",
+    year: 2015,
+    url: ""
   }
 ];

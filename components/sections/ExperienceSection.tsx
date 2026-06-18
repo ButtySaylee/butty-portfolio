@@ -5,8 +5,8 @@ import TimelineItem from "../ui/TimelineItem";
 import { experiences } from "@/data/experiences";
 
 export default function ExperienceSection() {
-  // Get first 4 experiences for 2x2 grid
-  const displayExperiences = experiences.slice(0, 4);
+  // All professional experiences
+  const displayExperiences = experiences.slice(0, 5);
 
   return (
     <section id="experience" className="px-6 py-16 bg-white dark:bg-slate-900">
@@ -19,13 +19,13 @@ export default function ExperienceSection() {
 
         <RevealOnScroll variant="fadeIn" delay={0.2}>
           <p className="text-lg text-center text-slate-600 dark:text-slate-400 mb-16 max-w-2xl mx-auto">
-            A journey through tech support, data engineering, and leadership roles.
+            From computer lab assistant to software engineer — a journey through QA, data engineering, and technical support.
           </p>
         </RevealOnScroll>
 
         {/* Experience Grid - 2x2 Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {displayExperiences.map((experience, index) => (
+          {displayExperiences.slice(0, 4).map((experience, index) => (
             <RevealOnScroll
               key={experience.id}
               variant="scaleIn"
@@ -45,6 +45,25 @@ export default function ExperienceSection() {
             </RevealOnScroll>
           ))}
         </div>
+
+        {/* 5th Experience - Centered Full Width */}
+        {displayExperiences.length > 4 && (
+          <div className="mt-8 max-w-xl mx-auto">
+            <RevealOnScroll variant="scaleIn" delay={0.4}>
+              <TimelineItem
+                role={displayExperiences[4].role}
+                company={displayExperiences[4].company}
+                period={displayExperiences[4].period}
+                description={displayExperiences[4].description}
+                achievements={displayExperiences[4].achievements}
+                type={displayExperiences[4].type}
+                index={4}
+                isLast={true}
+                isGridLayout={false}
+              />
+            </RevealOnScroll>
+          </div>
+        )}
       </div>
     </section>
   );

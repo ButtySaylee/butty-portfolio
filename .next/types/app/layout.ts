@@ -1,4 +1,4 @@
-// File: C:\Users\Hp\Desktop\Mis\butty-portfolio\app\layout.tsx
+// File: C:\Users\Hp\Desktop\ALL Projects\butty-portfolio\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

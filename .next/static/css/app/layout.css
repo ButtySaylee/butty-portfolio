@@ -777,6 +777,9 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
+.mt-8 {
+  margin-top: 2rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -926,6 +929,9 @@ video {
 }
 .max-w-sm {
   max-width: 24rem;
+}
+.max-w-xl {
+  max-width: 36rem;
 }
 .flex-1 {
   flex: 1 1 0%;

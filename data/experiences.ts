@@ -15,9 +15,10 @@ export const experiences: Experience[] = [
     id: "experience-lead",
     role: "Quality Assurance Freelancer",
     company: "LEAD Group",
-    period: "Jan 2026 – Present",
+    period: "Jan 2026 – Jun 2026",
     startDate: "2026-01",
-    description: "Performing quality assurance reviews of educational books to ensure accuracy, grammar, and formatting consistency. Identifying and correcting errors in content, diagrams, and references to improve clarity and compliance with standards. Delivering error-free learning materials across multiple grade levels, enhancing reliability and student outcomes.",
+    endDate: "2026-06",
+    description: "Conducted end-to-end QA reviews of educational books across multiple grade levels, verifying technical accuracy, grammar, and formatting against editorial standards. Identified and resolved errors in content, diagrams, and references, resulting in error-free learning materials.",
     achievements: [
       "Error-free learning materials across grades",
       "Enhanced content clarity and compliance",
@@ -27,72 +28,57 @@ export const experiences: Experience[] = [
   },
   {
     id: "apnapan",
-    role: "Data/Software Engineering Intern",
-    company: "Apnapan Fellow",
+    role: "Data & Software Engineering Intern",
+    company: "Apnapan",
     period: "May 2025 – Aug 2025",
     startDate: "2025-05",
     endDate: "2025-08",
-    description: "Engineered a data insights platform using Python, Streamlit, Pandas and Plotly to analyze 100+ student surveys. Integrated Google Sheets API and authentication to enable secure real-time data access. Improved reporting efficiency and stakeholder adoption by approximately 40%.",
+    description: "Built a full-stack data insights platform using Python, Streamlit, Pandas, and Plotly to process and visualize 100+ student survey responses via interactive dashboards. Integrated Google Sheets API with OAuth 2.0 authentication to enable secure, real-time, role-based data access for stakeholders.",
     achievements: [
       "Built platform analyzing 100+ surveys",
-      "40% efficiency improvement in reporting",
-      "Real-time data insights for stakeholders"
-    ],
-    type: "internship"
-  },
-  {
-    id: "swanirbhar",
-    role: "PR Strategist Intern",
-    company: "Swanirbhar",
-    period: "May 2025 – Aug 2025",
-    startDate: "2025-05",
-    endDate: "2025-08",
-    description: "Conducted data collection from 50+ surveys and interviews. Analyzed insights from survey and interview responses to support incubation and research strategy reports.",
-    achievements: [
-      "Collected data from 50+ surveys",
-      "Supported research strategy with insights",
-      "Contributed to incubation programs"
+      "Real-time data insights for stakeholders",
+      "Google Sheets API with OAuth 2.0 integration"
     ],
     type: "internship"
   },
   {
     id: "hypely",
     role: "Remote Virtual Assistant",
-    company: "Hypely Pty Ltd",
+    company: "Hypley Pty Ltd",
     period: "Apr 2024 – May 2025",
     startDate: "2024-04",
     endDate: "2025-05",
-    description: "Managed and verified 200+ business listings to improve marketplace accuracy. Conducted web research and assisted with email marketing campaigns. Increased outreach engagement by approximately 15%.",
+    description: "Coordinated administrative operations, managed digital records, and utilized productivity tools to support remote teams and streamline business processes. Delivered professional customer support, performed internet research, and prepared reports and documentation while maintaining high accuracy and attention to detail.",
     achievements: [
       "Verified 200+ business listings",
-      "15% increase in engagement",
-      "Improved marketplace accuracy"
+      "Streamlined remote business operations",
+      "Delivered professional customer support"
     ],
     type: "support"
   },
   {
-    id: "libtelco",
-    role: "Technical Support Assistant",
-    company: "Libtelco",
-    period: "Oct 2019 – Jul 2021",
-    startDate: "2019-10",
-    endDate: "2021-07",
-    description: "Diagnosed and resolved software/hardware issues for internal users, minimizing downtime by 25% through proactive maintenance.",
+    id: "computer-lab-assistant",
+    role: "Computer Lab Assistant",
+    company: "William Gabriel Kpoleh High School",
+    period: "Sept 2017 – Nov 2021",
+    startDate: "2017-09",
+    endDate: "2021-11",
+    description: "Provided computer literacy training to students, delivering hands-on instruction in Microsoft Word, Excel, PowerPoint, internet usage, and fundamental IT concepts. Maintained and troubleshot computer lab equipment, software, and network resources while assisting students and staff with technical support needs.",
     achievements: [
-      "25% reduction in system downtime",
-      "Proactive maintenance protocols",
-      "Resolved complex technical issues"
+      "Trained students in computer literacy",
+      "Maintained lab equipment & network resources",
+      "Delivered hands-on IT instruction"
     ],
     type: "support"
   },
   {
     id: "dtu-society",
-    role: "Technical Coordinator",
+    role: "Technical Activity Coordinator",
     company: "DTU International Student Society",
-    period: "Nov 2022 - Jan 2024",
+    period: "Nov 2022 – Jan 2024",
     startDate: "2022-11",
     endDate: "2024-01",
-    description: "Led planning and execution of 5+ technical events with 150+ international student participants. Strengthened cross-cultural collaboration among 150+ international students, improving event participation and peer networking.",
+    description: "Planned and executed 5+ technical events for 150+ international students, driving cross-cultural collaboration and peer networking across the university community.",
     achievements: [
       "Organized 5+ technical events",
       "Engaged 150+ international students",

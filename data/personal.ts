@@ -1,7 +1,7 @@
 export const personalData = {
   name: "Butty Saylee",
   brand: "Butty.dev",
-  title: "Software Engineer | Data Enthusiast | Cyber Forensics Explorer",
+  title: "Software Engineer | Cybersecurity | IT & Technical Support",
   tagline: "Turning complex problems into impactful, scalable solutions.",
   heroStatement: {
     actions: ["Building", "Crafting", "Engineering"],
@@ -25,7 +25,7 @@ export const personalData = {
   },
   stats: [
     { label: "Users Impacted", value: "100+" },
-    { label: "Years Experience", value: "6+" },
+    { label: "Years Experience", value: "8+" },
     { label: "Domains Mastered", value: "3" }
   ],
   profileImage: "/profile.jpg"
@@ -36,9 +36,9 @@ export const aboutStory = {
   story: "My journey through tech support, student leadership, and data engineering taught me one crucial lesson: **great solutions start with understanding people, not just technology.** Today, I combine technical expertise with user empathy to create impactful, scalable products.",
   milestones: [
     {
-      year: "2019",
+      year: "2017",
       title: "Started in Tech",
-      description: "Tech support at Libtelco",
+      description: "Computer lab assistant & IT trainer",
       icon: "wrench"
     },
     {
