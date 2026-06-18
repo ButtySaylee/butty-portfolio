@@ -1,99 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award } from "lucide-react";
-import RevealOnScroll from "../animations/RevealOnScroll";
+import { GraduationCap, ExternalLink } from "lucide-react";
 import { education, certifications } from "@/data/education";
 
 export default function EducationSection() {
   return (
-    <section id="education" className="px-6 py-16 bg-slate-50 dark:bg-slate-950">
-      <div className="max-w-4xl mx-auto">
-        <RevealOnScroll variant="fadeInUp">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-4 text-center">
-            Education & Certifications
+    <section id="education" className="relative px-6 py-24 bg-brutal-bg overflow-hidden">
+      {/* Grid */}
+      <div className="absolute inset-0 brutal-grid opacity-30" />
+
+      <div className="relative z-10 max-w-4xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="brutal-badge bg-brutal-green text-brutal-accent-fg mb-4 inline-block">
+            Education
+          </span>
+          <h2 className="kinetic-hero text-5xl sm:text-6xl lg:text-7xl mt-4">
+            Learning Path
           </h2>
-        </RevealOnScroll>
+        </div>
 
-        <RevealOnScroll variant="fadeIn" delay={0.2}>
-          <p className="text-lg text-center text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
-            Continuous learning through formal education and specialized certifications.
-          </p>
-        </RevealOnScroll>
-
-        {/* Education */}
-        <RevealOnScroll variant="scaleIn" delay={0.3}>
-          <div className="glass-effect dark:glass-effect-dark rounded-2xl p-8 mb-12 backdrop-blur-lg border border-slate-200 dark:border-slate-700">
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/30">
-                <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-400 mb-2">
-                  {education.degree}
-                </h3>
-                {education.minor && (
-                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-2">
-                    Minor: {education.minor}
-                  </p>
-                )}
-                <p className="text-slate-700 dark:text-slate-300 font-semibold">
+        {/* Education Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="brutal-sticker bg-white p-8 sm:p-10 mb-12 -rotate-1 hover:rotate-0 transition-all duration-200"
+        >
+          <div className="flex items-start gap-6">
+            <div className="w-16 h-16 flex-shrink-0 bg-brutal-blue border-2 border-brutal-border flex items-center justify-center">
+              <GraduationCap className="w-8 h-8 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-display font-bold text-2xl sm:text-3xl uppercase tracking-tight">
+                {education.degree}
+              </h3>
+              {education.minor && (
+                <p className="font-display font-bold text-sm text-brutal-muted-fg uppercase tracking-wide mt-1">
+                  Minor: {education.minor}
+                </p>
+              )}
+              <div className="mt-3 space-y-1">
+                <p className="font-display font-bold text-base uppercase">
                   {education.institution}
                 </p>
-                <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">
+                <p className="font-mono text-xs uppercase tracking-wider text-brutal-muted-fg">
                   {education.location} • {education.period}
                 </p>
                 {education.expectedGraduation && (
-                  <p className="text-sm text-cyan-600 dark:text-cyan-400 mt-2 font-medium">
-                    Expected Graduation: {education.expectedGraduation}
+                  <p className="font-mono text-xs uppercase tracking-wider text-brutal-blue font-bold mt-2">
+                    Expected: {education.expectedGraduation}
                   </p>
                 )}
               </div>
             </div>
           </div>
-        </RevealOnScroll>
+        </motion.div>
 
         {/* Certifications */}
-        <div className="space-y-4">
-          <RevealOnScroll variant="fadeInUp" delay={0.4}>
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Award className="w-6 h-6 text-cyan-500" />
-              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200">
-                Professional Certifications
-              </h3>
-            </div>
-          </RevealOnScroll>
+        <div className="text-center mb-8">
+          <h3 className="font-display font-bold text-2xl uppercase tracking-tight flex items-center justify-center gap-2">
+            🏅 Certifications
+          </h3>
+        </div>
 
-          <div className="grid gap-4">
-            {certifications.map((cert, index) => (
-              <motion.a
-                key={cert.id}
-                href={cert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 + index * 0.05, duration: 0.5 }}
-                whileHover={{ x: 8, scale: 1.02 }}
-                className="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-glass border border-slate-200 dark:border-slate-700 hover:shadow-xl-glow hover:border-blue-400 dark:hover:border-cyan-500 transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
-                      {cert.title}
-                    </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                      {cert.provider} • {cert.platform} • {cert.year}
-                    </p>
-                  </div>
-                  <div className="text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform">
-                    →
-                  </div>
-                </div>
-              </motion.a>
-            ))}
-          </div>
+        <div className="grid gap-4">
+          {certifications.map((cert, index) => (
+            <motion.a
+              key={cert.id}
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.3 }}
+              className={`brutal-sticker bg-white p-5 flex items-center justify-between group ${index % 2 === 0 ? "rotate-1" : "-rotate-1"} hover:rotate-0 transition-all duration-200`}
+            >
+              <div>
+                <h4 className="font-display font-bold text-base sm:text-lg uppercase tracking-tight group-hover:text-brutal-blue transition-colors">
+                  {cert.title}
+                </h4>
+                <p className="font-mono text-xs uppercase tracking-wider text-brutal-muted-fg mt-1">
+                  {cert.provider} • {cert.platform} • {cert.year}
+                </p>
+              </div>
+              <ExternalLink size={20} className="text-brutal-fg flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>

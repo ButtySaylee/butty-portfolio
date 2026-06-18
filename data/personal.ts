@@ -25,7 +25,7 @@ export const personalData = {
   },
   stats: [
     { label: "Users Impacted", value: "100+" },
-    { label: "Years Experience", value: "8+" },
+    { label: "Projects Built", value: "4+" },
     { label: "Domains Mastered", value: "3" }
   ],
   profileImage: "/profile.jpg"

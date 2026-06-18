@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth Scrolling */
+/* === NEO BRUTALISM + KINETIC DESIGN SYSTEM === */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -12,7 +15,6 @@
     html {
       scroll-behavior: auto;
     }
-
     *,
     *::before,
     *::after {
@@ -23,81 +25,203 @@
   }
 }
 
-/* Custom Utilities */
 @layer utilities {
-  /* Glassmorphism Effects */
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px) saturate(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  /* === BRUTALIST STICKER EFFECTS === */
+  .brutal-sticker {
+    border: 3px solid #121212;
+    box-shadow: 6px 6px 0px 0px #121212;
+    transition: all 0.1s ease;
   }
 
-  .glass-effect-dark {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(10px) saturate(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
-    border: 1px solid rgba(148, 163, 184, 0.1);
+  .brutal-sticker:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px 0px #121212;
   }
 
-  /* Gradient Text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600;
-    background-size: 200% 200%;
+  .brutal-sticker:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #121212;
   }
 
-  .gradient-text-animated {
-    @apply gradient-text;
-    animation: gradient 8s ease infinite;
+  .brutal-sticker-accent {
+    border: 3px solid #121212;
+    box-shadow: 6px 6px 0px 0px #DFE104;
+    transition: all 0.1s ease;
   }
 
-  /* Drop Shadow Glass */
-  .drop-shadow-glass {
-    filter: drop-shadow(0 4px 20px rgba(59, 130, 246, 0.3));
+  .brutal-sticker-accent:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px 0px #DFE104;
   }
 
-  /* Performance Optimizations */
-  .gpu-accelerated {
-    transform: translateZ(0);
-    will-change: transform;
+  .brutal-sticker-accent:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #121212;
   }
 
-  /* Gradient Mesh Background */
-  .gradient-mesh {
-    background: radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.25) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.2) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.2) 0px, transparent 50%);
+  /* === BRUTALIST DIVIDERS === */
+  .brutal-divider {
+    border-bottom: 4px solid #121212;
   }
 
-  /* Magnetic Effect - Applied via JS */
-  .magnetic {
-    transition: transform 0.2s ease-out;
+  .brutal-divider-thin {
+    border-bottom: 2px solid #121212;
   }
 
-  /* Hide scrollbar but keep functionality */
+  /* === BRUTALIST BADGE / STICKER === */
+  .brutal-badge {
+    display: inline-block;
+    border: 2px solid #121212;
+    background: #DFE104;
+    color: #121212;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    transform: rotate(-3deg);
+  }
+
+  .brutal-badge-red {
+    background: #E04E4E;
+    color: #FFFFFF;
+  }
+
+  .brutal-badge-blue {
+    background: #4E7BE0;
+    color: #FFFFFF;
+  }
+
+  /* === KINETIC MARQUEE === */
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    border-top: 3px solid #121212;
+    border-bottom: 3px solid #121212;
+    padding: 1rem 0;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    gap: 3rem;
+    animation: marquee 25s linear infinite;
+  }
+
+  .marquee-content-reverse {
+    display: inline-flex;
+    gap: 3rem;
+    animation: marquee-reverse 25s linear infinite;
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: #121212;
+  }
+
+  .marquee-dot {
+    width: 8px;
+    height: 8px;
+    background: #DFE104;
+    border: 2px solid #121212;
+    flex-shrink: 0;
+  }
+
+  /* === KINETIC MASSIVE TYPE === */
+  .kinetic-hero {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
+
+  .kinetic-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: #121212;
+    opacity: 0.08;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* === BRUTALIST GRID BACKGROUND === */
+  .brutal-grid {
+    background-image:
+      linear-gradient(#121212 1px, transparent 1px),
+      linear-gradient(90deg, #121212 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.04;
+  }
+
+  /* === BRUTALIST TAG === */
+  .brutal-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 2px solid #121212;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #FFFFFF;
+    color: #121212;
+  }
+
+  .brutal-tag-yellow {
+    background: #DFE104;
+    border-color: #121212;
+  }
+
+  /* === SCROLLBAR STYLING === */
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
-  /* 3D Transform Styles */
-  .preserve-3d {
-    transform-style: preserve-3d;
+  /* === MECHANICAL FEEDBACK === */
+  .mechanical-press {
+    transition: all 0.08s ease;
   }
-
-  .backface-hidden {
-    backface-visibility: hidden;
+  .mechanical-press:active {
+    transform: translate(3px, 3px);
+    box-shadow: none !important;
   }
 }
 
 body {
-  @apply antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100;
+  @apply antialiased;
+  background: #F5F0E8;
+  color: #121212;
+  font-family: "Inter", sans-serif;
 }
+
 /* Transcript print styles (moved from inline component to avoid hydration mismatch) */
 @page { size: A4; margin: 10mm; }
 body.transcript-print { font-family: "Times New Roman", Times, serif; margin: 0; padding: 0; background: #fff; color: #000; line-height: 1.3; }

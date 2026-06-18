@@ -8,20 +8,20 @@ import EducationSection from "../components/sections/EducationSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import SkillsSection from "../components/sections/SkillsSection";
 import ContactSection from "../components/sections/ContactSection";
-import FloatingWhatsApp from "../components/ui/FloatingWhatsApp";
 
 export default function Page() {
   return (
     <>
       <Nav />
-      <HeroSection />
-      <AboutSection />
-      <ExperienceSection />
-      <EducationSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <ContactSection />
-      <FloatingWhatsApp />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <EducationSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <ContactSection />
+      </main>
     </>
   );
 }

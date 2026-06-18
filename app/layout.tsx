@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
 export const metadata: Metadata = {
-  title: "Butty Saylee | Portfolio",
-  description: "Professional Software Engineer Portfolio of Butty Saylee",
+  title: "Butty Saylee | Software Engineer & Builder",
+  description: "Portfolio of Butty Saylee — Software Engineer, Data Engineer, and Problem Solver. Building impactful, scalable solutions.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans`}>
+      <body className="bg-brutal-bg text-brutal-fg font-body">
         {children}
         <Analytics />
       </body>

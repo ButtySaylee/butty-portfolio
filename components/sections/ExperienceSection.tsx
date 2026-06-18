@@ -1,69 +1,90 @@
 "use client";
 
-import RevealOnScroll from "../animations/RevealOnScroll";
-import TimelineItem from "../ui/TimelineItem";
+import { motion } from "framer-motion";
 import { experiences } from "@/data/experiences";
 
+const typeConfig: Record<string, { label: string; color: string }> = {
+  engineering: { label: "Engineering", color: "bg-brutal-blue text-white" },
+  leadership: { label: "Leadership", color: "bg-brutal-accent text-brutal-accent-fg" },
+  support: { label: "Support", color: "bg-brutal-green text-brutal-accent-fg" },
+  internship: { label: "Internship", color: "bg-brutal-orange text-white" },
+};
+
 export default function ExperienceSection() {
-  // All professional experiences
   const displayExperiences = experiences.slice(0, 5);
 
   return (
-    <section id="experience" className="px-6 py-16 bg-white dark:bg-slate-900">
-      <div className="max-w-6xl mx-auto">
-        <RevealOnScroll variant="fadeInUp">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-4 text-center">
-            Experience & Leadership
+    <section id="experience" className="relative px-6 py-24 bg-brutal-bg">
+      <div className="absolute inset-0 brutal-grid opacity-50" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="brutal-badge bg-brutal-red text-white mb-4 inline-block">
+            Experience
+          </span>
+          <h2 className="kinetic-hero text-5xl sm:text-6xl lg:text-7xl mt-4">
+            Work & Leadership
           </h2>
-        </RevealOnScroll>
-
-        <RevealOnScroll variant="fadeIn" delay={0.2}>
-          <p className="text-lg text-center text-slate-600 dark:text-slate-400 mb-16 max-w-2xl mx-auto">
-            From computer lab assistant to software engineer — a journey through QA, data engineering, and technical support.
+          <p className="font-mono text-sm text-brutal-muted-fg mt-4 max-w-xl mx-auto">
+            From computer lab assistant to software engineer — spanning QA, data engineering, and technical support.
           </p>
-        </RevealOnScroll>
-
-        {/* Experience Grid - 2x2 Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {displayExperiences.slice(0, 4).map((experience, index) => (
-            <RevealOnScroll
-              key={experience.id}
-              variant="scaleIn"
-              delay={index * 0.1}
-            >
-              <TimelineItem
-                role={experience.role}
-                company={experience.company}
-                period={experience.period}
-                description={experience.description}
-                achievements={experience.achievements}
-                type={experience.type}
-                index={index}
-                isLast={false}
-                isGridLayout={true}
-              />
-            </RevealOnScroll>
-          ))}
         </div>
 
-        {/* 5th Experience - Centered Full Width */}
-        {displayExperiences.length > 4 && (
-          <div className="mt-8 max-w-xl mx-auto">
-            <RevealOnScroll variant="scaleIn" delay={0.4}>
-              <TimelineItem
-                role={displayExperiences[4].role}
-                company={displayExperiences[4].company}
-                period={displayExperiences[4].period}
-                description={displayExperiences[4].description}
-                achievements={displayExperiences[4].achievements}
-                type={displayExperiences[4].type}
-                index={4}
-                isLast={true}
-                isGridLayout={false}
-              />
-            </RevealOnScroll>
-          </div>
-        )}
+        {/* Experience Cards - Stacked Layout */}
+        <div className="max-w-4xl mx-auto space-y-6">
+          {displayExperiences.map((experience, index) => {
+            const typeInfo = typeConfig[experience.type] || typeConfig.support;
+            const rotations = ["-rotate-1", "rotate-1", "-rotate-1", "rotate-1", "rotate-0"];
+
+            return (
+              <motion.div
+                key={experience.id}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.4 }}
+                className={`brutal-sticker bg-white p-6 sm:p-8 ${rotations[index]} hover:rotate-0 transition-all duration-200`}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                  {/* Left: Meta */}
+                  <div className="sm:w-48 flex-shrink-0">
+                    <span className={`brutal-tag ${typeInfo.color} mb-2 inline-block`}>
+                      {typeInfo.label}
+                    </span>
+                    <div className="font-mono text-xs uppercase tracking-wider text-brutal-muted-fg mt-2">
+                      {experience.period}
+                    </div>
+                  </div>
+
+                  {/* Right: Content */}
+                  <div className="flex-1">
+                    <h3 className="font-display font-bold text-xl sm:text-2xl uppercase tracking-tight">
+                      {experience.role}
+                    </h3>
+                    <p className="font-display font-bold text-sm sm:text-base text-brutal-muted-fg uppercase tracking-wide mt-1">
+                      {experience.company}
+                    </p>
+                    <p className="text-brutal-muted-fg text-sm sm:text-base mt-3 leading-relaxed">
+                      {experience.description}
+                    </p>
+
+                    {/* Achievements */}
+                    {experience.achievements && experience.achievements.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {experience.achievements.map((achievement, i) => (
+                          <span key={i} className="brutal-tag bg-brutal-bg text-brutal-fg text-xs">
+                            ✓ {achievement}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

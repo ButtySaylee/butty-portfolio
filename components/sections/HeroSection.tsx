@@ -2,226 +2,195 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Particles from "react-tsparticles";
-import { Phone } from "lucide-react";
-import TypewriterText from "../animations/TypewriterText";
-import GradientMesh from "../ui/GradientMesh";
-import StatsCard from "../ui/StatsCard";
-import AnimatedButton from "../ui/AnimatedButton";
-import MagneticButton from "../ui/MagneticButton";
-import FloatingElement from "../animations/FloatingElement";
+import { ArrowDown, Download, Mail, ArrowRight } from "lucide-react";
 import { personalData } from "@/data/personal";
-import { particlesConfig } from "@/data/constants";
+
+// All skills for the marquee
+const marqueeSkills = [
+  "Python", "React", "Next.js", "TypeScript", "Data Engineering", 
+  "Cybersecurity", "QA Testing", "MongoDB", "Node.js", "Streamlit",
+  "Pandas", "Machine Learning", "REST APIs", "SQL", "Cloud Computing"
+];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-16 bg-slate-950">
-      {/* Animated Gradient Orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Orb 1 - Blue */}
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-0 -left-40 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
-        />
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-brutal-bg">
+      {/* Brutalist Grid Background */}
+      <div className="absolute inset-0 brutal-grid" />
 
-        {/* Orb 2 - Cyan */}
-        <motion.div
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
-        />
-
-        {/* Orb 3 - Purple */}
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-0 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
-        />
-
-        {/* Orb 4 - Teal */}
-        <motion.div
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 80, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 -right-40 w-96 h-96 bg-teal-500/25 rounded-full blur-3xl"
-        />
+      {/* Massive Background Number (Kinetic element) */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none select-none">
+        <span className="kinetic-number text-[30rem] leading-none">08</span>
       </div>
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
-
-      {/* Gradient Mesh */}
-      <div className="absolute inset-0">
-        <GradientMesh />
-      </div>
-
-      {/* Refined Particles */}
-      <div className="absolute inset-0 opacity-40">
-        {/* @ts-ignore */}
-        <Particles options={particlesConfig} />
-      </div>
-
-      {/* Vignette Effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-slate-950/80" />
-
-      {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-          {/* Left Side - Main Content */}
-          <div className="text-center lg:text-left space-y-8">
-            {/* Profile Image - Floating with Gradient Ring */}
-            <div className="flex justify-center lg:justify-start mb-8">
-              <FloatingElement duration={8} distance={15}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                  className="relative group"
-                >
-                  {/* Outer glow ring */}
-                  <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 opacity-75 blur-xl group-hover:opacity-100 transition-opacity animate-pulse-glow" />
-
-                  {/* Animated spinning gradient ring */}
-                  <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 animate-spin-slow opacity-90" />
-
-                  <div className="relative rounded-full p-1 bg-slate-950">
-                    <Image
-                      src={personalData.profileImage}
-                      alt={`Profile picture of ${personalData.name}`}
-                      width={160}
-                      height={160}
-                      className="rounded-full object-cover border-2 border-slate-800"
-                      priority
-                    />
-                  </div>
-                </motion.div>
-              </FloatingElement>
-            </div>
-
-            {/* Name */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold"
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pt-24 pb-12">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+          {/* Left Side */}
+          <div>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+              className="inline-block mb-6"
             >
-              <span className="text-white drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
-                {personalData.name}
+              <span className="brutal-badge bg-brutal-accent text-brutal-accent-fg hover:rotate-0 transition-transform duration-200">
+                Software Engineer
+              </span>
+            </motion.div>
+
+            {/* Massive Name - Kinetic Typography */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="kinetic-hero text-7xl sm:text-8xl lg:text-9xl xl:text-[8rem] leading-[0.85] mb-4"
+            >
+              {personalData.name.split(" ")[0]}
+              <br />
+              <span className="text-brutal-accent relative">
+                {personalData.name.split(" ")[1]}
+                {/* Underline sticker */}
+                <span className="absolute -bottom-2 left-0 w-full h-3 bg-brutal-accent -z-10" />
               </span>
             </motion.h1>
-
-            {/* Typewriter Animation */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <TypewriterText
-                actions={personalData.heroStatement.actions}
-                qualities={personalData.heroStatement.qualities}
-                constant={personalData.heroStatement.constant}
-                className="text-white font-semibold text-2xl sm:text-3xl lg:text-4xl"
-              />
-            </motion.div>
 
             {/* Tagline */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              transition={{ delay: 0.25, duration: 0.4 }}
+              className="font-display font-bold text-xl sm:text-2xl lg:text-3xl uppercase tracking-tight mt-6 mb-4 max-w-xl"
             >
               {personalData.tagline}
             </motion.p>
 
-            {/* Contact Info */}
-            <motion.div
+            {/* Description */}
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="flex items-center justify-center lg:justify-start gap-2 text-base font-medium text-slate-200"
+              transition={{ delay: 0.35, duration: 0.4 }}
+              className="text-brutal-muted-fg text-base sm:text-lg max-w-xl mb-8 leading-relaxed"
             >
-              <div className="p-2 rounded-lg bg-cyan-500/10 backdrop-blur-sm">
-                <Phone size={18} className="text-cyan-400" />
-              </div>
-              <a
-                href={`tel:${personalData.contact.phone}`}
-                className="hover:text-cyan-400 transition-colors"
-              >
-                {personalData.contact.phoneDisplay}
-              </a>
-            </motion.div>
+              Turning complex problems into impactful, scalable solutions. 
+              Experience spanning software engineering, 
+              data engineering, cybersecurity, and technical leadership.
+            </motion.p>
 
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              transition={{ delay: 0.45, duration: 0.4 }}
+              className="flex flex-wrap gap-4"
             >
-              <MagneticButton
-                href="#contact"
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold shadow-glow-blue hover:shadow-xl-glow transition-all duration-300"
-                strength={0.2}
-              >
-                Hire Me →
-              </MagneticButton>
-
-              <AnimatedButton
+              <a
                 href="#projects"
-                variant="ghost"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-brutal-fg text-brutal-bg font-display font-bold text-lg uppercase tracking-wide border-4 border-brutal-border shadow-brutal-lg mechanical-press"
               >
                 View My Work
-              </AnimatedButton>
+                <ArrowRight size={20} />
+              </a>
 
-              <motion.a
+              <a
                 href="/resume"
-                whileHover={{ scale: 1.05 }}
-                className="px-8 py-4 rounded-xl bg-cyan-600/80 text-white font-bold shadow-glass hover:bg-cyan-700 transition-all duration-300 text-center"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-brutal-accent text-brutal-accent-fg font-display font-bold text-lg uppercase tracking-wide border-4 border-brutal-border shadow-brutal-lg mechanical-press"
               >
-                Download Resume
-              </motion.a>
+                <Download size={20} />
+                Resume
+              </a>
+
+              <a
+                href={`mailto:${personalData.contact.email}`}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brutal-fg font-display font-bold text-lg uppercase tracking-wide border-4 border-brutal-border shadow-brutal-lg mechanical-press"
+              >
+                <Mail size={20} />
+                Email
+              </a>
+            </motion.div>
+
+            {/* Stats Row */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55, duration: 0.4 }}
+              className="flex gap-8 mt-10 pt-8 border-t-4 border-brutal-border"
+            >
+              {personalData.stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="font-display font-bold text-3xl sm:text-4xl tracking-tight">
+                    {stat.value}
+                  </div>
+                  <div className="font-mono text-xs uppercase tracking-wider text-brutal-muted-fg mt-1">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </motion.div>
           </div>
 
-          {/* Right Side - Floating Stats Card (Hidden on mobile) */}
-          <div className="hidden lg:block">
-            <StatsCard stats={personalData.stats} />
-          </div>
+          {/* Right Side - Profile with Sticker Effect */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="hidden lg:flex flex-col items-center"
+          >
+            {/* Profile Image - Sticker Style */}
+            <div className="relative brutal-sticker p-2 bg-white rotate-3 hover:rotate-0 transition-transform duration-300">
+              <div className="relative w-72 h-72 overflow-hidden">
+                <Image
+                  src={personalData.profileImage}
+                  alt={personalData.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Corner sticker */}
+              <div className="absolute -top-3 -right-3 brutal-badge bg-brutal-red text-white rotate-12">
+                HELLO!
+              </div>
+            </div>
+
+          </motion.div>
         </div>
       </div>
+
+      {/* Kinetic Marquee - Skills */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+        className="relative z-10 mt-auto"
+      >
+        <div className="marquee-container border-b-0">
+          <div className="marquee-content">
+            {[...marqueeSkills, ...marqueeSkills].map((skill, i) => (
+              <span key={i} className="marquee-item">
+                <span className="marquee-dot" />
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ArrowDown size={24} className="text-brutal-fg" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

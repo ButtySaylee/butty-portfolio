@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Copy, Check, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Mail, Copy, Check, MessageCircle, Phone, ArrowUpRight, Sparkles } from "lucide-react";
 import { useState } from "react";
-import RevealOnScroll from "../animations/RevealOnScroll";
-import MagneticButton from "../ui/MagneticButton";
 import { personalData } from "@/data/personal";
 
 export default function ContactSection() {
@@ -17,157 +15,137 @@ export default function ContactSection() {
   };
 
   return (
-    <section
-      id="contact"
-      className="relative px-6 py-16 bg-slate-950 overflow-hidden"
-    >
-      {/* Animated background orbs */}
+    <section id="contact" className="relative bg-brutal-bg overflow-hidden">
+      {/* Full-width Yellow CTA Block */}
       <motion.div
-        animate={{
-          x: [0, 50, 0],
-          y: [0, -30, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          x: [0, -50, 0],
-          y: [0, 40, 0],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl"
-      />
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="bg-brutal-accent border-t-4 border-b-4 border-brutal-border"
+      >
+        <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="kinetic-hero text-5xl sm:text-7xl lg:text-8xl text-brutal-accent-fg leading-[0.85]"
+          >
+            Let's Build
+            <br />
+            <span className="bg-brutal-fg text-brutal-accent px-4 inline-block mt-2">
+              Something
+            </span>
+            <br />
+            Remarkable
+          </motion.h2>
 
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
-
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <RevealOnScroll variant="fadeInUp">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-6 text-white drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
-            Let's Build Something Remarkable
-          </h2>
-        </RevealOnScroll>
-
-        <RevealOnScroll variant="fadeIn" delay={0.2}>
-          <p className="text-lg sm:text-xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="font-display font-bold text-lg sm:text-xl text-brutal-accent-fg/80 mt-6 max-w-lg mx-auto"
+          >
             Whether you're hiring, collaborating, or just want to talk tech — I'm here to create impactful solutions together.
-          </p>
-        </RevealOnScroll>
+          </motion.p>
 
-        {/* Why Work With Me */}
-        <RevealOnScroll variant="scaleIn" delay={0.3}>
-          <div className="glass-effect-dark rounded-2xl p-8 mb-12 backdrop-blur-xl border border-white/10">
-            <h3 className="text-xl font-bold text-white mb-6">Why Work With Me</h3>
-            <div className="grid sm:grid-cols-3 gap-6 text-left">
-              <div className="space-y-2">
-                <div className="text-cyan-400 text-3xl mb-2">⚡</div>
-                <p className="text-white font-semibold">Full-stack + Data Skills</p>
-                <p className="text-sm text-slate-300">End-to-end development with data-driven insights</p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-cyan-400 text-3xl mb-2">🎯</div>
-                <p className="text-white font-semibold">Proven Impact</p>
-                <p className="text-sm text-slate-300">100+ users, 40% efficiency gains</p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-cyan-400 text-3xl mb-2">🚀</div>
-                <p className="text-white font-semibold">Fast Learner</p>
-                <p className="text-sm text-slate-300">Adaptable across domains & teams</p>
-              </div>
-            </div>
-          </div>
-        </RevealOnScroll>
-
-        {/* Email Copy Box */}
-        <RevealOnScroll variant="fadeInUp" delay={0.4}>
+          {/* Email Copy */}
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            onClick={copyEmail}
-            className="glass-effect-dark rounded-xl p-5 mb-8 cursor-pointer hover:shadow-glow-cyan transition-all duration-300 max-w-md mx-auto backdrop-blur-xl border border-cyan-500/20"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 }}
+            className="mt-10"
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-cyan-500/10">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                </div>
-                <span className="text-white font-medium text-sm sm:text-base">
-                  {personalData.contact.email}
-                </span>
-              </div>
-              <motion.button
-                whileTap={{ scale: 0.9 }}
-                className="p-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
-              >
-                {emailCopied ? (
-                  <Check className="w-4 h-4 text-white" />
-                ) : (
-                  <Copy className="w-4 h-4 text-white" />
-                )}
-              </motion.button>
-            </div>
+            <button
+              onClick={copyEmail}
+              className="brutal-sticker bg-brutal-fg text-brutal-bg px-8 py-5 font-display font-bold text-lg uppercase tracking-wide inline-flex items-center gap-4 group"
+            >
+              <Mail size={22} />
+              <span>{personalData.contact.email}</span>
+              {emailCopied ? (
+                <Check size={20} className="text-brutal-green" />
+              ) : (
+                <Copy size={18} className="opacity-60 group-hover:opacity-100 transition-opacity" />
+              )}
+            </button>
           </motion.div>
-        </RevealOnScroll>
 
-        {/* Social Links */}
-        <RevealOnScroll variant="fadeIn" delay={0.5}>
-          <div className="flex flex-wrap gap-4 justify-center mb-10">
-            <MagneticButton
-              href={personalData.social.github.url}
-              className="px-6 py-3 rounded-xl glass-effect-dark border border-white/10 text-white font-semibold flex items-center gap-2 hover:border-cyan-500/50 hover:shadow-glow-blue transition-all duration-300 backdrop-blur-xl"
-              strength={0.15}
-            >
-              <Github className="w-5 h-5" />
-              <span>GitHub</span>
-            </MagneticButton>
-
-            <MagneticButton
-              href={personalData.social.linkedin.url}
-              className="px-6 py-3 rounded-xl glass-effect-dark border border-white/10 text-white font-semibold flex items-center gap-2 hover:border-cyan-500/50 hover:shadow-glow-blue transition-all duration-300 backdrop-blur-xl"
-              strength={0.15}
-            >
-              <Linkedin className="w-5 h-5" />
-              <span>LinkedIn</span>
-            </MagneticButton>
-
-            <MagneticButton
-              href={`https://api.whatsapp.com/send?phone=${personalData.contact.phone}&text=${encodeURIComponent("Hi! I found your portfolio and I'd like to connect with you.")}`}
-              className="px-6 py-3 rounded-xl glass-effect-dark border border-white/10 text-white font-semibold flex items-center gap-2 hover:border-green-500/50 hover:shadow-glow-blue transition-all duration-300 backdrop-blur-xl"
-              strength={0.15}
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp</span>
-            </MagneticButton>
-
-            <MagneticButton
-              href={`tel:${personalData.contact.phone}`}
-              className="px-6 py-3 rounded-xl glass-effect-dark border border-white/10 text-white font-semibold flex items-center gap-2 hover:border-cyan-500/50 hover:shadow-glow-blue transition-all duration-300 backdrop-blur-xl"
-              strength={0.15}
-            >
-              <span>📞</span>
-              <span>Call Me</span>
-            </MagneticButton>
-          </div>
-        </RevealOnScroll>
-
-        {/* Primary CTA */}
-        <RevealOnScroll variant="scaleIn" delay={0.6}>
-          <MagneticButton
-            href={`mailto:${personalData.contact.email}`}
-            className="inline-block px-12 py-5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white text-lg font-bold shadow-xl-glow hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all duration-300 animate-gradient-slow bg-200%"
-            strength={0.25}
+          {/* Primary CTA */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.35 }}
+            className="mt-8"
           >
-            Let's Talk →
-          </MagneticButton>
-        </RevealOnScroll>
+            <a
+              href={`mailto:${personalData.contact.email}`}
+              className="inline-flex items-center gap-3 px-10 py-5 bg-brutal-fg text-brutal-accent font-display font-bold text-xl uppercase tracking-wide border-4 border-brutal-border shadow-brutal-xl mechanical-press"
+            >
+              <Sparkles size={24} />
+              Start a Conversation
+              <ArrowUpRight size={24} />
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Lower Section - Social Links */}
+      <div className="border-b-4 border-brutal-border">
+        <div className="max-w-4xl mx-auto px-6 py-12">
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href={personalData.social.github.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brutal-sticker bg-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wide inline-flex items-center gap-3 hover:bg-brutal-bg transition-colors duration-75"
+            >
+              <Github size={20} />
+              GitHub
+            </a>
+
+            <a
+              href={personalData.social.linkedin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brutal-sticker bg-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wide inline-flex items-center gap-3 hover:bg-brutal-bg transition-colors duration-75"
+            >
+              <Linkedin size={20} />
+              LinkedIn
+            </a>
+
+            <a
+              href={`https://api.whatsapp.com/send?phone=${personalData.contact.phone}&text=${encodeURIComponent("Hi! I found your portfolio and I'd like to connect with you.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brutal-sticker bg-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wide inline-flex items-center gap-3 hover:bg-brutal-bg transition-colors duration-75"
+            >
+              <MessageCircle size={20} />
+              WhatsApp
+            </a>
+
+            <a
+              href={`tel:${personalData.contact.phone}`}
+              className="brutal-sticker bg-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wide inline-flex items-center gap-3 hover:bg-brutal-bg transition-colors duration-75"
+            >
+              <Phone size={20} />
+              {personalData.contact.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="border-t-4 border-brutal-border bg-brutal-fg text-brutal-bg">
+        <div className="max-w-4xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <span className="font-display font-bold text-sm uppercase tracking-wide">
+            Butty.dev © {new Date().getFullYear()}
+          </span>
+          <span className="font-mono text-xs uppercase tracking-wider text-brutal-bg/60">
+            Built with brute force & acid yellow
+          </span>
+        </div>
       </div>
     </section>
   );

@@ -1,62 +1,71 @@
 "use client";
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Nav() {
-  const [theme, setTheme] = useState("light");
-  const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.documentElement.classList.toggle("dark", savedTheme === "dark");
-  }, []);
+  const navItems = [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Skills", href: "#skills" },
+    { label: "Contact", href: "#contact" },
+  ];
 
-  useEffect(() => {
-    if (mounted) {
-      document.documentElement.classList.toggle("dark", theme === "dark");
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme, mounted]);
+  return (
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-brutal-bg border-b-4 border-brutal-border">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          {/* Logo - Sticker style */}
+          <a href="#" className="font-display font-bold text-xl uppercase tracking-tight brutal-sticker px-3 py-1 bg-brutal-accent text-brutal-accent-fg">
+            Butty.dev
+          </a>
 
-  function toggleTheme() {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="px-4 py-2 font-display font-bold text-sm uppercase tracking-wide border-2 border-transparent hover:border-brutal-border mechanical-press"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
 
-  if (!mounted) {
-    return (
-      <nav className="w-full p-4 flex justify-between items-center border-b border-slate-200 dark:border-slate-800">
-        <span className="font-bold">Butty.dev</span>
-        <div className="space-x-4">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <button
-            className="ml-4 px-3 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-semibold shadow hover:bg-blue-200 dark:hover:bg-blue-800 transition"
-            aria-label="Toggle dark mode"
-          >
-            ☀️
-          </button>
+          {/* Mobile Menu Toggle */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="w-10 h-10 border-2 border-brutal-border flex items-center justify-center mechanical-press bg-white"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </nav>
-    );
-  }
-  return (
-    <nav className="w-full p-4 flex justify-between items-center border-b border-slate-200 dark:border-slate-800">
-      <span className="font-bold">Butty.dev</span>
-      <div className="space-x-4">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button
-          onClick={toggleTheme}
-          className="ml-4 px-3 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-semibold shadow hover:bg-blue-200 dark:hover:bg-blue-800 transition"
-          aria-label="Toggle dark mode"
-        >
-          {theme === "dark" ? "🌙" : "☀️"}
-        </button>
-      </div>
-    </nav>
+
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-40 bg-brutal-bg pt-16 md:hidden">
+          <div className="flex flex-col p-6 gap-2">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="block w-full py-4 px-6 border-4 border-brutal-border font-display font-bold text-2xl uppercase tracking-tight brutal-sticker bg-white hover:bg-brutal-accent transition-colors duration-75"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
