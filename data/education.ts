@@ -22,7 +22,7 @@ export const education: Education = {
   institution: "Delhi Technological University (DTU)",
   location: "Delhi, India",
   period: "2022 - 2026",
-  expectedGraduation: "Jul 2026"
+  expectedGraduation: "Jun 2026"
 };
 
 export const certifications: Certification[] = [
@@ -65,6 +65,14 @@ export const certifications: Certification[] = [
     platform: "ALX",
     year: 2024,
     url: "https://www.virtualbadge.io/certificate-validator?credential=cer-bb6d7034-0fea-483f-8b58-0c104aaf"
+  },
+  {
+    id: "google-cybersecurity-professional",
+    title: "Google Cybersecurity Professional Certificate",
+    provider: "Google",
+    platform: "Coursera",
+    year: 2026,
+    url: "https://coursera.org/verify/professional-cert/TUDFRYY8ATIM"
   },
   {
     id: "google-tech-support",

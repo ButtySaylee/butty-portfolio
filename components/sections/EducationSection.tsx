@@ -49,8 +49,8 @@ export default function EducationSection() {
                   {education.location} • {education.period}
                 </p>
                 {education.expectedGraduation && (
-                  <p className="font-mono text-xs uppercase tracking-wider text-brutal-blue font-bold mt-2">
-                    Expected: {education.expectedGraduation}
+                  <p className="font-mono text-xs uppercase tracking-wider text-brutal-green font-bold mt-2">
+                    Graduated: {education.expectedGraduation}
                   </p>
                 )}
               </div>
