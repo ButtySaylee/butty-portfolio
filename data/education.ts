@@ -27,6 +27,14 @@ export const education: Education = {
 
 export const certifications: Certification[] = [
   {
+    id: "google-it-support-professional",
+    title: "Google IT Support Professional Certificate",
+    provider: "Google",
+    platform: "Coursera",
+    year: 2026,
+    url: "https://coursera.org/verify/professional-cert/TUDFRYY8ATIM"
+  },
+  {
     id: "google-cybersecurity",
     title: "Foundations of Cybersecurity",
     provider: "Google",
@@ -65,14 +73,6 @@ export const certifications: Certification[] = [
     platform: "ALX",
     year: 2024,
     url: "https://www.virtualbadge.io/certificate-validator?credential=cer-bb6d7034-0fea-483f-8b58-0c104aaf"
-  },
-  {
-    id: "google-cybersecurity-professional",
-    title: "Google Cybersecurity Professional Certificate",
-    provider: "Google",
-    platform: "Coursera",
-    year: 2026,
-    url: "https://coursera.org/verify/professional-cert/TUDFRYY8ATIM"
   },
   {
     id: "google-tech-support",
